@@ -1,0 +1,9 @@
+.wrap {
+  margin: auto;
+  width: 300px;
+  font-family: Helvetica;
+}
+
+.wrap__title {
+  color: blue;
+}
