@@ -3,5 +3,14 @@
 }
 
 .done {
-  color: #c4c4c4;
+  text-decoration: line-through;
+}
+
+.btn {
+	opacity: 0;
+}
+
+.wrap:hover button {
+	opacity: 1;
+	cursor: pointer;
 }
