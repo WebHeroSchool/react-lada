@@ -27,6 +27,8 @@ class App extends React.Component {
     ]
   };
 
+  onClickDone = isDone => console.log(isDone);
+
   render() {
     const count = this.state.items.length;
   
@@ -41,7 +43,7 @@ class App extends React.Component {
           <MenuItem>Выполненные</MenuItem>
         </Select>
       </FormControl>
-      <ItemList items={this.state.items}/>
+      <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
       <InputItem />
       <Footer count={count}/>
       <Button className={styles.button} variant="contained" color="secondary">

@@ -5,9 +5,14 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 
-const Item = ({value, isDone}) => (
+const Item = ({value, isDone, onClickDone}) => (
   <div className={styles.wrap}>
-    <Checkbox checked={isDone} edge="start" disableRipple/>
+    <Checkbox
+      checked={isDone}
+      edge="start"
+      disableRipple
+      onClick={() => onClickDone(isDone)}
+    />
     <span className={
       classnames({
         [styles.item]: true,
