@@ -14,22 +14,43 @@ class App extends React.Component {
     items: [
       {
         value: 'Посмотреть 5 уроков',
-        isDone: true
+        isDone: true,
+        id: 1
       },
       {
         value: 'Выполнить домашние задания',
-        isDone: false
+        isDone: false,
+        id: 2
       },
       {
         value: 'Почитать дополнительные статьи',
-        isDone: false
+        isDone: false,
+        id: 3
       }
     ]
   };
 
+  onClickDone = id => {
+    const newItemList = this.state.items.map(item => {
+      const newItem = { ...item };
+
+      if (item.id === id) {
+        newItem.isDone = !item.isDone;
+      }
+
+      return newItem;
+    });
+
+    this.setState({ items: newItemList });
+  };
+
+  onClickDelete = id => {
+    const newItemListDelete = this.state.items.filter(item => item.id !== id);
+    this.setState({ items: newItemListDelete });
+  };
+
   render() {
     const count = this.state.items.length;
-  
     return(
     <div className={styles.wrap}>
      <h1 className={styles.title}>Важные дела:</h1>
@@ -41,7 +62,11 @@ class App extends React.Component {
           <MenuItem>Выполненные</MenuItem>
         </Select>
       </FormControl>
-      <ItemList items={this.state.items}/>
+      <ItemList 
+        items={this.state.items} 
+        onClickDone={this.onClickDone}
+        onClickDelete={this.onClickDelete}
+      />
       <InputItem />
       <Footer count={count}/>
       <Button className={styles.button} variant="contained" color="secondary">
