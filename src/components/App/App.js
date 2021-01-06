@@ -44,6 +44,11 @@ class App extends React.Component {
     this.setState({ items: newItemList });
   };
 
+  onClickDelete = id => {
+    const newItemListDelete = this.state.items.filter(item => item.id !== id);
+    this.setState({ items: newItemListDelete });
+  };
+
   render() {
     const count = this.state.items.length;
     return(
@@ -57,7 +62,11 @@ class App extends React.Component {
           <MenuItem>Выполненные</MenuItem>
         </Select>
       </FormControl>
-      <ItemList items={this.state.items} onClickDone={this.onClickDone}/>
+      <ItemList 
+        items={this.state.items} 
+        onClickDone={this.onClickDone}
+        onClickDelete={this.onClickDelete}
+      />
       <InputItem />
       <Footer count={count}/>
       <Button className={styles.button} variant="contained" color="secondary">
