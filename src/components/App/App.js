@@ -27,7 +27,8 @@ class App extends React.Component {
         isDone: false,
         id: 3
       }
-    ]
+    ],
+    count: 3
   };
 
   onClickDone = id => {
@@ -49,8 +50,20 @@ class App extends React.Component {
     this.setState({ items: newItemListDelete });
   };
 
+  onClickAdd = value => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        value,
+        isDone: false,
+        id: state.count + 1
+      }
+    ],
+    count: state.count + 1
+  }));
+  
+
   render() {
-    const count = this.state.items.length;
     return(
     <div className={styles.wrap}>
      <h1 className={styles.title}>Важные дела:</h1>
@@ -67,8 +80,8 @@ class App extends React.Component {
         onClickDone={this.onClickDone}
         onClickDelete={this.onClickDelete}
       />
-      <InputItem />
-      <Footer count={count}/>
+      <InputItem onClickAdd={this.onClickAdd}/>
+      <Footer count={this.state.count}/>
       <Button className={styles.button} variant="contained" color="secondary">
         Удалить выполненные дела
       </Button>

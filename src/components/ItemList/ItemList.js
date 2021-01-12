@@ -3,7 +3,7 @@ import Item from '../Item/Item';
 
 
 const ItemList = ({items, onClickDone, onClickDelete}) => (<div>
-  {items.map(item => <div key={item.value}>
+  {items.map(item => <div key={item.id}>
     <Item 
       value={item.value} 
       isDone={item.isDone}
