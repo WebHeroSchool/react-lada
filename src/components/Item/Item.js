@@ -9,7 +9,7 @@ const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
   <div className={styles.wrap}>
     <Checkbox
       checked={isDone}
-      edge="start"
+      edge='start'
       disableRipple
       onClick={() => onClickDone(id)}
     />
@@ -27,6 +27,12 @@ const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
       onClick={() => onClickDelete(id)}>
       <DeleteOutlinedIcon />
     </IconButton>
-  </div>);
+  </div>
+);
+
+Item.defaultProps = {
+  isDone: false,
+  value: 'Дел нет'
+};
 
 export default Item;

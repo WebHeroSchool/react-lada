@@ -26,17 +26,17 @@ class InputItem extends React.Component {
     return (
       <div>
         <TextField
-          id="standard-textarea"
-          label="Добавить задание"
-          placeholder="Введите задание"
+          id='standard-textarea'
+          label='Добавить задание'
+          placeholder='Введите задание'
           error={this.state.errorAdd}
           multiline
           value={this.state.inputValue}
           onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
         />
         <Fab 
-          color="secondary"
-          aria-label="add" 
+          color='secondary'
+          aria-label='add'
           onClick={this.onButtonClick}
         >
           <AddIcon />

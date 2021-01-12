@@ -68,7 +68,7 @@ class App extends React.Component {
     <div className={styles.wrap}>
      <h1 className={styles.title}>Важные дела:</h1>
      <FormControl className={styles.filter}>
-        <InputLabel id="demo-simple-select-label">Фильтр</InputLabel>
+        <InputLabel id='demo-simple-select-label'>Фильтр</InputLabel>
         <Select>
           <MenuItem>Все</MenuItem>
           <MenuItem>Активные</MenuItem>
@@ -82,7 +82,7 @@ class App extends React.Component {
       />
       <InputItem onClickAdd={this.onClickAdd}/>
       <Footer count={this.state.count}/>
-      <Button className={styles.button} variant="contained" color="secondary">
+      <Button className={styles.button} variant='contained' color='secondary'>
         Удалить выполненные дела
       </Button>
     </div>);

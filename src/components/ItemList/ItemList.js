@@ -14,4 +14,14 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<div>
   </div>)}
 </div>);
 
+ItemList.defaultProps = {
+  items: [
+    {
+      value: 'Дел нет',
+      isDone: false,
+      id: 0
+    }
+  ]
+};
+
 export default ItemList;
