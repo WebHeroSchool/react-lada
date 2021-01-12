@@ -6,30 +6,48 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import PropTypes from 'prop-types';
 
-const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
-  <div className={styles.wrap}>
-    <Checkbox
-      checked={isDone}
-      edge='start'
-      disableRipple
-      onClick={() => onClickDone(id)}
-    />
-    <span className={
-      classnames({
-        [styles.item]: true,
-        [styles.done]: isDone
-      })
-    }>
-    {value}
-    </span>
-    <IconButton
-      className={styles.btn} 
-      disableRipple
-      onClick={() => onClickDelete(id)}>
-      <DeleteOutlinedIcon />
-    </IconButton>
-  </div>
-);
+
+class Item extends React.Component {
+  //Популярные методы жизненного цикла:
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+ 
+  render() {
+    const {value, isDone, onClickDone, id, onClickDelete} = this.props;
+
+    return (
+      <div className={styles.wrap}>
+        <Checkbox
+          checked={isDone}
+          edge='start'
+          disableRipple
+          onClick={() => onClickDone(id)}
+        />
+        <span className={
+          classnames({
+            [styles.item]: true,
+            [styles.done]: isDone
+          })
+        }>
+        {value}
+        </span>
+        <IconButton
+          className={styles.btn} 
+          disableRipple
+          onClick={() => onClickDelete(id)}>
+          <DeleteOutlinedIcon />
+        </IconButton>
+      </div>  
+    );
+  }
+}
 
 Item.defaultProps = {
   isDone: false,
