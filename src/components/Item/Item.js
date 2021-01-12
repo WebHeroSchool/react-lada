@@ -4,6 +4,7 @@ import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import PropTypes from 'prop-types';
 
 const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
   <div className={styles.wrap}>
@@ -33,6 +34,11 @@ const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
 Item.defaultProps = {
   isDone: false,
   value: 'Дел нет'
+};
+
+Item.propTypes = {
+  isDone: PropTypes.bool,
+  value: PropTypes.string
 };
 
 export default Item;

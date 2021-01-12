@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '../Item/Item';
+import PropTypes from 'prop-types';
 
 
 const ItemList = ({items, onClickDone, onClickDelete}) => (<div>
@@ -22,6 +23,10 @@ ItemList.defaultProps = {
       id: 0
     }
   ]
+};
+
+ItemList.propTypes = {
+  items: PropTypes.array
 };
 
 export default ItemList;
