@@ -2,6 +2,11 @@
   color: #333333;
 }
 
+.wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
 .done {
   text-decoration: line-through;
 }

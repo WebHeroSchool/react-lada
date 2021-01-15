@@ -12,12 +12,12 @@
 }
 
 .filter {
-  width: 150px;
-  display: flex;
-  margin-left: auto;
+  margin: 0 0 0 auto !important;
+  width: 150px !important;
+  display: flex !important;
 }
 
 .button {
-  display: flex;
-  margin: auto;
+  display: flex !important;
+  margin: auto !important;
 }

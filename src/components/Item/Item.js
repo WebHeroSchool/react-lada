@@ -14,20 +14,22 @@ class Item extends React.Component {
 
     return (
       <div className={styles.wrap}>
-        <Checkbox
-          checked={isDone}
-          edge='start'
-          disableRipple
-          onClick={() => onClickDone(id)}
-        />
-        <span className={
-          classnames({
-            [styles.item]: true,
-            [styles.done]: isDone
-          })
-        }>
-        {value}
-        </span>
+        <div>
+          <Checkbox
+            checked={isDone}
+            edge='start'
+            disableRipple
+            onClick={() => onClickDone(id)}
+          />
+          <span className={
+            classnames({
+              [styles.item]: true,
+              [styles.done]: isDone
+            })
+          }>
+          {value}
+          </span>
+        </div>
         <IconButton
           className={styles.btn} 
           disableRipple

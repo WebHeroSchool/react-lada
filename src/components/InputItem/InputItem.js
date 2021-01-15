@@ -3,6 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 
+import styles from './InputItem.module.css';
+
 class InputItem extends React.Component {
   state = {
     inputValue: '',
@@ -24,8 +26,9 @@ class InputItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.inputItem}>
         <TextField
+          className={styles.textField}
           id='standard-textarea'
           label='Добавить задание'
           placeholder='Введите задание'
@@ -34,7 +37,7 @@ class InputItem extends React.Component {
           value={this.state.inputValue}
           onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
         />
-        <Fab 
+        <Fab
           color='secondary'
           aria-label='add'
           onClick={this.onButtonClick}
