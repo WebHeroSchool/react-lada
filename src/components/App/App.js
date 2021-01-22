@@ -1,31 +1,26 @@
 import React from 'react';
-import MenuList from '@material-ui/core/MenuList';
-import MenuItem from '@material-ui/core/MenuItem';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import About from '../About/About';
 import Todo from '../Todo/Todo';
-import Contacts from '../Contacts/Contacts';
 
 import styles from './App.module.css';
 
 export default function App() {
   return(
     <Router>
-    <div className={styles.wrap}>
+    <header className={styles.wrap}>
       <div>
-        <MenuList>
-          <Link to='/' className={styles.link}><MenuItem>Обо мне</MenuItem></Link>
-          <Link to='/todo' className={styles.link}><MenuItem>Дела</MenuItem></Link>
-          <Link to='/contacts' className={styles.link}><MenuItem>Контакты</MenuItem></Link>
-        </MenuList>
+        <div className={styles.menu}>
+          <NavLink to='/' className={styles.link} activeClassName={styles.link__active}><p>Обо мне</p></NavLink>
+          <NavLink to='/todo' className={styles.link} activeClassName={styles.link__active}><p>Дела</p></NavLink>
+        </div>
       </div>
       <div>
         <Route path='/' exact component={About} />
         <Route path='/todo' exact component={Todo} />
-        <Route path='/contacts' exact component={Contacts} />
       </div>
-    </div>
+    </header>
     </Router>
   );
 }

@@ -3,16 +3,17 @@ import Item from '../Item/Item';
 import PropTypes from 'prop-types';
 
 
-const ItemList = ({items, onClickDone, onClickDelete}) => (<div>
+const ItemList = ({items, onClickDone, onClickDelete}) => (<div> 
   {items.map(item => <div key={item.id}>
-    <Item 
-      value={item.value} 
-      isDone={item.isDone}
-      id = {item.id}
-      onClickDone={onClickDone}
-      onClickDelete={onClickDelete}
-    />
-  </div>)}
+      <Item 
+        value={item.value} 
+        isDone={item.isDone}
+        id = {item.id}
+        onClickDone={onClickDone}
+        onClickDelete={onClickDelete}
+      />
+    </div>)
+  }
 </div>);
 
 ItemList.defaultProps = {

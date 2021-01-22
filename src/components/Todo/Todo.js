@@ -1,9 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import Button from '@material-ui/core/Button';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
@@ -30,14 +26,12 @@ export default function Todo() {
     }
   ]);
   const [count, setCount] = useState(3);
+  const [filter, setFilter] = useState('all');
 
-  useEffect( () =>  {
-    console.log('componentDidMount');
-  }, []);
+  let itemsFilter;
 
-  useEffect( () =>  {
-    console.log('componentDidUpdate');
-  }, [items]);
+  const countActive = (items.filter((item) => item.isDone === false)).length;
+  const countDone = (items.filter((item) => item.isDone === true)).length;
 
   const onClickDone = id => {
     const newItemList = items.map(item => {
@@ -56,6 +50,12 @@ export default function Todo() {
     setCount((count) => count - 1);
   };
 
+  const onClickDeleteDone = () => {
+    const newItemListDeleteDone = items.filter(item => !item.isDone);
+    setItems(newItemListDeleteDone);
+    setCount((count) => newItemListDeleteDone.length);
+  };
+
   const onClickAdd = value => {
     const newItemListAdd = [
       ...items,
@@ -68,25 +68,37 @@ export default function Todo() {
     setItems(newItemListAdd);
     setCount((count) => count + 1);
   };
+
+  const onClickFilter = filtered => setFilter(filtered);
+
+  switch (filter) {
+    case 'done':
+      itemsFilter = items.filter(item => item.isDone);
+      break;
+    case 'active':
+      itemsFilter = items.filter(item => !item.isDone);
+      break;
+    default:
+      itemsFilter = items;
+  }
+
   return(
   <div className={styles.wrap}>
     <h1 className={styles.title}>Важные дела:</h1>
-    <FormControl className={styles.filter}>
-      <InputLabel id="demo-simple-select-label">Фильтр</InputLabel>
-      <Select>
-        <MenuItem>Все</MenuItem>
-        <MenuItem>Активные</MenuItem>
-        <MenuItem>Выполненные</MenuItem>
-      </Select>
-    </FormControl>
-    <ItemList 
-      items={items} 
+    <Footer 
+      count={count}
+      filtered={filter}
+      countActive={countActive}
+      countDone={countDone}
+      onClickFilter={onClickFilter}
+    />
+    <ItemList
+      items={itemsFilter}
       onClickDone={onClickDone}
       onClickDelete={onClickDelete}
     />
     <InputItem onClickAdd={onClickAdd}/>
-    <Footer count={count}/>
-    <Button className={styles.button} variant="contained" color="secondary">
+    <Button onClick = {onClickDeleteDone} className={styles.button} variant="contained" color="secondary">
     Удалить выполненные дела
     </Button>
   </div>);
