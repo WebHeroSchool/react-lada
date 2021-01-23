@@ -2,16 +2,6 @@
   color: #333333;
 }
 
-.wrap {
-	display: flex;
-	justify-content: space-between;
-}
-
-.wrap__item {
-	display: flex;
-	align-items: center;
-}
-
 .done {
   text-decoration: line-through;
 }
