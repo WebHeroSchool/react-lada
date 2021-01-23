@@ -1,0 +1,9 @@
+.inputItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.textField {
+  width: 80% !important;
+}
