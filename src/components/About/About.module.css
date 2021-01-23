@@ -2,23 +2,21 @@
 
 .wrap {
   margin: auto;
-  width: 500px;
+  max-width: 500px;
   padding: 20px;
+  border-radius: 9px;
   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
 }
 
-.repositories__name {
-  display: block;
-}
-
-.img {
+.header__img {
   grid-row: 1 / 5;
   width: 170px;
   height: 170px;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
   border-radius: 10px;
 }
 
-.info {
+.header {
   display: grid;
   grid-template-columns: max-content auto;
   grid-template-rows: repeat(3, max-content) auto;
@@ -27,48 +25,43 @@
   padding: 10px 12px;
   margin-bottom: 14px;
   border-radius: 9px;
-  flex: auto;
   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
 }
 
-.title {
+.header__title {
   font: 700 28px Roboto, arial, helvetica, sans-serif;
   margin: 0 0 12px;
 }
 
-.subtitle {
+.header__subtitle {
   font: 400 12px/14px Roboto, arial, helvetica, sans-serif;
   color: #999999;
   margin: 0 0 14px;
 }
 
-.contacts {
+.header__contacts {
   display: flex;
   margin-bottom: 9px;
 }
 
-.contact {
+.header__contacts_data {
   font: 400 12px/14px Roboto, arial, helvetica, sans-serif;
   color: #999999;
   margin: 0 0 0 4px;
 }
 
-.phone {
+.header__phone {
   display: flex;
   margin-bottom: 45px;
 }
 
-.bio {
-  margin: auto;
-}
-
-.link {
+.header__link {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
-.github {
+.header__link_github {
   display: block;
   background: url(img/github.svg);
   width: 24px;
@@ -76,7 +69,7 @@
   margin-right: 8px;
 }
 
-.facebook {
+.header__link_facebook {
   display: block;
   background: url(img/facebook.svg);
   width: 24px;
@@ -84,7 +77,7 @@
   margin-right: 8px;
 }
 
-.linkedin {
+.header__link_linkedin {
   display: block;
   background: url(img/linkedin.svg);
   width: 24px;
@@ -92,14 +85,14 @@
   margin-right: 8px;
 }
 
-.vk {
+.header__link_vk {
   display: block;
   background: url(img/vk.svg);
   width: 24px;
   height: 24px;
 }
 
-.repos_title {
+.section__title {
   font: 700 16px Roboto, arial, helvetica, sans-serif;
 }
 
@@ -109,7 +102,7 @@
   background: no-repeat center url(img/pr.gif);
 }
 
-.error, .reposNone {
+.section__error, .reposNone {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +120,13 @@
   margin: 0;
 }
 
+.repositories {
+  list-style-type: none;
+  overflow: auto;
+  height: 300px;
+  padding: 0 5px 0 0;
+}
+
 .repositories__info {
   display: flex;
   font: 400 12px/14px Roboto, arial, helvetica, sans-serif;
@@ -135,6 +135,7 @@
 }
 
 .repositories__name {
+  display: block;
   font: 500 14px/16px Roboto, arial, helvetica, sans-serif;
   text-decoration: none;
   color: black;
@@ -201,4 +202,15 @@
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .header {
+    grid-template-columns: auto;
+  }
+
+  .header__img {
+    margin: auto;
+  }
+
 }

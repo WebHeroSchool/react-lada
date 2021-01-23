@@ -1,11 +1,13 @@
 import React from 'react';
-import classnames from 'classnames';
-import styles from './Item.module.css';
+
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
-import PropTypes from 'prop-types';
 
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+
+import styles from './Item.module.css';
 
 class Item extends React.Component {
 
@@ -14,21 +16,21 @@ class Item extends React.Component {
 
     return (
       <div className={styles.wrap}>
-        <div>
+        <div className={styles.wrap__item}>
           <Checkbox
             checked={isDone}
             edge='start'
             disableRipple
             onClick={() => onClickDone(id)}
           />
-          <span className={
+          <div className={
             classnames({
               [styles.item]: true,
               [styles.done]: isDone
             })
           }>
           {value}
-          </span>
+          </div>
         </div>
         <IconButton
           className={styles.btn} 

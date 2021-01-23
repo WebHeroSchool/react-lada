@@ -18,9 +18,9 @@ class InputItem extends React.Component {
 
     if (this.state.inputValue !== '') {
       this.props.onClickAdd(this.state.inputValue);
-      this.state.errorAdd = false;
+      this.setState({errorAdd: false});
     } else {
-      this.state.errorAdd = true;
+      this.setState({errorAdd: true});
     }
   }
 

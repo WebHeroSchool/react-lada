@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { CircularProgress } from '@material-ui/core';
+import React from 'react';
 import { Octokit } from '@octokit/rest';
 
 import styles from './About.module.css';
@@ -29,11 +28,9 @@ class About extends React.Component {
           repoList: data,
           isLoading: false
         });
-        console.log(data);
     })
     .catch(err => {
       this.setState({
-        error: 'Что-то пошло не так...',
         isError: true,
         isLoading: false
       });
@@ -50,7 +47,6 @@ class About extends React.Component {
     })
     .catch(err => {
       this.setState({
-        error: 'Ошибка',
         isError: true,
         isLoadingName: false
       });
@@ -59,38 +55,38 @@ class About extends React.Component {
 
 
   render() {
-    const { isLoading, isLoadingName, isError, repoList, userData, languageLogo} = this.state;
+    const { isLoading, isLoadingName, isError, repoList, userData } = this.state;
 
     return (
       <div className={styles.wrap}>
         {isLoadingName ? <div className={styles.preloader}> </div> :
-        <div className={styles.info}>
-          <img src={userData.avatar_url} className={styles.img}/>
+        <div className={styles.header}>
+          <img alt='' src={userData.avatar_url} className={styles.header__img}/>
           <div>
-            <p className={styles.title}> {userData.name} </p>
-            <p className={styles.subtitle}> {userData.bio} </p>
-            <div className={styles.contacts}>
-              <img src={arroba}/>
-              <p className={styles.contact}>Ladu3112@gmail.com</p>
+            <p className={styles.header__title}> {userData.name} </p>
+            <p className={styles.header__subtitle}> {userData.bio} </p>
+            <div className={styles.header__contacts}>
+              <img alt='' src={arroba}/>
+              <p className={styles.header__contacts_data}>Ladu3112@gmail.com</p>
             </div>
-            <div className={styles.phone}>
-              <img src={telegram}/>
-              <p className={styles.contact}>+7-963-731-43-20</p>
+            <div className={styles.header__phone}>
+              <img alt='' src={telegram}/>
+              <p className={styles.header__contacts_data}>+7-963-731-43-20</p>
             </div>
           </div>
-          <div className={styles.link}>
-            <a href={userData.html_url} className={styles.github}></a>
-            <a href='#' className={styles.linkedin}></a>
-            <a href='#' className={styles.facebook}></a>
-            <a href='#' className={styles.vk}></a>
+          <div className={styles.header__link}>
+            <a href={userData.html_url} className={styles.header__link_github}> </a>
+            <a href='https://linkedin.com' className={styles.header__link_linkedin}> </a>
+            <a href='https://www.facebook.com' className={styles.header__link_facebook}> </a>
+            <a href='https://vk.com/id_lada_ber' className={styles.header__link_vk}> </a>
           </div>
         </div>}
         { isLoading ? <div className={styles.preloader}> </div> :
-          <div className={styles.repos_wrap}>
-            <p className={styles.repos_title}>Репозитории на github.com</p>
+          <div>
+            <p className={styles.section__title}>Репозитории на github.com</p>
             { isError ? 
-              <div className={styles.error}>
-                <img src={frame}/>
+              <div className={styles.section__error}>
+                <img alt='' src={frame}/>
                 <p className={styles.text}>Что-то пошло не так...</p>
                 <p className={styles.text__help}>Попробуйте <a href='#'>загрузить</a> ещё раз</p>
               </div> :
@@ -113,7 +109,7 @@ class About extends React.Component {
                     </div>
                   </a>))) :
                 <div className={styles.reposNone}>
-                <img src={frame}/>
+                <img alt='' src={frame}/>
                 <p className={styles.text}>Репозитории отсутствуют</p>
                 <div className={styles.reposNoneAdd}>
                   <p className={styles.text__help}>Добавьте как минимум один репозиторий на <a href='https://github.com/'>github.com</a></p>

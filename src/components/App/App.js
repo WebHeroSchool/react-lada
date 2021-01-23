@@ -11,14 +11,15 @@ export default function App() {
     <Router>
     <header className={styles.wrap}>
       <div>
-        <div className={styles.menu}>
-          <NavLink to='/' className={styles.link} activeClassName={styles.link__active}><p>Обо мне</p></NavLink>
+        <div className={styles.main}>
+          <NavLink to='/about' className={styles.link} activeClassName={styles.link__active}><p>Обо мне</p></NavLink>
           <NavLink to='/todo' className={styles.link} activeClassName={styles.link__active}><p>Дела</p></NavLink>
         </div>
       </div>
       <div>
         <Route path='/' exact component={About} />
-        <Route path='/todo' exact component={Todo} />
+        <Route path='/about' component={About} />
+        <Route path='/todo' component={Todo} />
       </div>
     </header>
     </Router>
