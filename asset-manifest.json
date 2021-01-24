@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-lada/static/css/main.4824ac66.chunk.css",
-    "main.js": "/react-lada/static/js/main.81582959.chunk.js",
-    "main.js.map": "/react-lada/static/js/main.81582959.chunk.js.map",
+    "main.js": "/react-lada/static/js/main.12cab1af.chunk.js",
+    "main.js.map": "/react-lada/static/js/main.12cab1af.chunk.js.map",
     "runtime-main.js": "/react-lada/static/js/runtime-main.45778f10.js",
     "runtime-main.js.map": "/react-lada/static/js/runtime-main.45778f10.js.map",
-    "static/js/2.b5dacfcb.chunk.js": "/react-lada/static/js/2.b5dacfcb.chunk.js",
-    "static/js/2.b5dacfcb.chunk.js.map": "/react-lada/static/js/2.b5dacfcb.chunk.js.map",
+    "static/js/2.1b3ca8a4.chunk.js": "/react-lada/static/js/2.1b3ca8a4.chunk.js",
+    "static/js/2.1b3ca8a4.chunk.js.map": "/react-lada/static/js/2.1b3ca8a4.chunk.js.map",
     "index.html": "/react-lada/index.html",
     "static/css/main.4824ac66.chunk.css.map": "/react-lada/static/css/main.4824ac66.chunk.css.map",
-    "static/js/2.b5dacfcb.chunk.js.LICENSE.txt": "/react-lada/static/js/2.b5dacfcb.chunk.js.LICENSE.txt",
+    "static/js/2.1b3ca8a4.chunk.js.LICENSE.txt": "/react-lada/static/js/2.1b3ca8a4.chunk.js.LICENSE.txt",
     "static/media/Frame.567bac1c.svg": "/react-lada/static/media/Frame.567bac1c.svg",
     "static/media/arroba.7744e64b.svg": "/react-lada/static/media/arroba.7744e64b.svg",
     "static/media/About.module.css": "/react-lada/static/media/vk.0784db7d.svg",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.45778f10.js",
-    "static/js/2.b5dacfcb.chunk.js",
+    "static/js/2.1b3ca8a4.chunk.js",
     "static/css/main.4824ac66.chunk.css",
-    "static/js/main.81582959.chunk.js"
+    "static/js/main.12cab1af.chunk.js"
   ]
 }
